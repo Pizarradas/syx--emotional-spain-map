@@ -1,0 +1,18 @@
+/* Error: Undefined mixin.
+ *    ,
+ * 14 |   @include resets-global($theme);
+ *    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ *    '
+ *   scss\themes\_shared\_core.scss 14:3           syx-core()
+ *   scss\themes\example-01\bundle-docs.scss 49:1  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined mixin.\a    \2577 \a 14 \2502    @include resets-global($theme);\d\a    \2502    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a    \2575 \a   scss\\themes\\_shared\\_core.scss 14:3           syx-core()\a   scss\\themes\\example-01\\bundle-docs.scss 49:1  root stylesheet";
+}
