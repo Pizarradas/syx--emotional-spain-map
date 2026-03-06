@@ -1,0 +1,25 @@
+{
+  "name": "emotional-spain-map",
+  "version": "1.0.0",
+  "description": "Interactive emotional weather map of Spain — powered by SYX Design System",
+  "main": "index.html",
+  "scripts": {
+    "generate": "node scripts/generate-emotions.js",
+    "dev": "npx live-server --port=3000 --open=index.html"
+  },
+  "keywords": [
+    "emotional-map",
+    "spain",
+    "leaflet",
+    "syx-design-system",
+    "emotion-theming"
+  ],
+  "author": "SYX / Emotional Map Project",
+  "license": "MIT",
+  "dependencies": {
+    "rss-parser": "^3.13.0"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
