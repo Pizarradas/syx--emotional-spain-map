@@ -1,0 +1,72 @@
+[
+  {
+    "city": "Madrid",
+    "emotion": "anger",
+    "emoji": "😡",
+    "headline": "Protestas frente al Congreso por la nueva ley de vivienda",
+    "source": "Google News"
+  },
+  {
+    "city": "Barcelona",
+    "emotion": "sadness",
+    "emoji": "😢",
+    "headline": "Cae el turismo en Cataluña por tercer mes consecutivo",
+    "source": "Google News"
+  },
+  {
+    "city": "Valencia",
+    "emotion": "fear",
+    "emoji": "😱",
+    "headline": "Alerta meteorológica por tormentas severas esta tarde",
+    "source": "Google News"
+  },
+  {
+    "city": "Sevilla",
+    "emotion": "joy",
+    "emoji": "😀",
+    "headline": "El Betis gana la Copa del Rey ante el Atletico de Madrid",
+    "source": "Google News"
+  },
+  {
+    "city": "Bilbao",
+    "emotion": "surprise",
+    "emoji": "😲",
+    "headline": "Descubren hallazgo arqueológico histórico en el Casco Viejo",
+    "source": "Google News"
+  },
+  {
+    "city": "Zaragoza",
+    "emotion": "disgust",
+    "emoji": "🤢",
+    "headline": "Escándalo de corrupción salpica al ayuntamiento",
+    "source": "Google News"
+  },
+  {
+    "city": "Málaga",
+    "emotion": "joy",
+    "emoji": "😀",
+    "headline": "Málaga bate récord de visitantes en Semana Santa",
+    "source": "Google News"
+  },
+  {
+    "city": "Murcia",
+    "emotion": "anger",
+    "emoji": "😡",
+    "headline": "Agricultores cortan la autovía en protesta por los precios",
+    "source": "Google News"
+  },
+  {
+    "city": "Valladolid",
+    "emotion": "sadness",
+    "emoji": "😢",
+    "headline": "Cierre de otra fábrica deja sin empleo a 300 trabajadores",
+    "source": "Google News"
+  },
+  {
+    "city": "A Coruña",
+    "emotion": "surprise",
+    "emoji": "😲",
+    "headline": "Un gallego gana el primer premio de la Lotería Nacional",
+    "source": "Google News"
+  }
+]
