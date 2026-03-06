@@ -1,0 +1,359 @@
+// ================================================
+// EMOTIONAL MAP THEME — 6 EMOTION OVERRIDES
+// ================================================
+// Part of SYX Design System
+// Emotion themes are activated via:
+//   body[data-emotion-theme="anger"]
+//   body[data-emotion-theme="sadness"]
+//   body[data-emotion-theme="fear"]
+//   body[data-emotion-theme="joy"]
+//   body[data-emotion-theme="surprise"]
+//   body[data-emotion-theme="disgust"]
+//   body[data-emotion-theme="neutral"]
+//
+// Architecture rules (from 11_SYX_TOKEN_MAPPING.md):
+//   - Themes override SEMANTIC tokens only
+//   - Primitive tokens remain unchanged
+//   - Components react automatically through token cascade
+// ================================================
+
+@use "../../abstracts/index" as *;
+
+// ================================================
+// BASE THEME — Neutral (default state)
+// Dark cartographic aesthetic, no emotional bias
+// ================================================
+@mixin theme-emotional-map-base {
+  :root {
+    // Spacing base
+    --primitive-space-base: 0.25rem;
+
+    // Base measure
+    --base-measure: var(--primitive-space-base);
+
+    // Fonts — Inter for UI legibility on map
+    --semantic-font-family-primary:
+      "Inter", system-ui, -apple-system, sans-serif;
+    --semantic-font-family-heading:
+      "Inter", system-ui, -apple-system, sans-serif;
+    --reset-html-font:
+      normal normal 400 16px/24px "Inter", system-ui, -apple-system, sans-serif;
+
+    // Layout
+    --layout-max-width: 100vw;
+    --layout-pad-1: calc(2 * var(--base-measure));
+    --layout-gap-1: calc(1 * var(--base-measure));
+
+    // Theme base
+    --theme-focus-ring-width: 2px;
+    --theme-focus: 0 0 0.313rem 0 var(--semantic-focus-ring-color);
+    --theme-radius: calc(2 * var(--base-measure));
+    --theme-w-border: calc(0.5 * var(--base-measure));
+
+    // Widths
+    --semantic-border-width: var(--theme-w-border);
+    --semantic-outline-width: var(--theme-focus-ring-width);
+    --semantic-border-radius-default: 0.375rem;
+    --semantic-border-radius-sm: 0.25rem;
+    --semantic-border-radius-lg: 0.75rem;
+    --semantic-border-radius-circle: 9999px;
+
+    // ── NEUTRAL PALETTE (default — map idle state) ──
+    --semantic-color-primary: oklch(0.55 0.08 240);
+    --semantic-color-secondary: oklch(0.45 0.06 240);
+    --semantic-color-accent-primary: oklch(0.65 0.1 240);
+
+    // Text
+    --semantic-color-text-primary: oklch(0.95 0.005 240);
+    --semantic-color-text-secondary: oklch(0.72 0.015 240);
+    --semantic-color-text-tertiary: oklch(0.58 0.012 240);
+    --semantic-color-text-inverse: oklch(0.1 0 0);
+    --semantic-color-text-disabled: oklch(0.45 0.008 240);
+
+    // Backgrounds — dark cartographic base
+    --semantic-color-bg-primary: oklch(0.13 0.025 240);
+    --semantic-color-bg-secondary: oklch(0.18 0.022 240);
+    --semantic-color-bg-tertiary: oklch(0.22 0.02 240);
+    --semantic-color-bg-inverse: oklch(0.95 0 0);
+
+    // Borders
+    --semantic-color-border-subtle: oklch(0.28 0.018 240);
+    --semantic-color-border-default: oklch(0.32 0.02 240);
+    --semantic-color-border-strong: oklch(0.4 0.022 240);
+    --semantic-color-border-focus: oklch(0.65 0.1 240);
+
+    // Links
+    --semantic-color-link-default: oklch(0.7 0.12 240);
+    --semantic-color-link-hover: oklch(0.8 0.1 240);
+    --semantic-color-link-visited: oklch(0.62 0.1 280);
+    --semantic-color-link-active: oklch(0.8 0.1 240);
+
+    // State / Feedback
+    --semantic-color-state-hover-primary: oklch(0.65 0.1 240);
+    --semantic-focus-ring-color: oklch(0.65 0.1 240);
+    --semantic-shadow-focus: 0 0 0 3px oklch(0.65 0.1 240 / 0.35);
+
+    // Emotional ambience token — controls gradient overlay
+    --emotional-ambience-color-start: oklch(0.13 0.025 240 / 0);
+    --emotional-ambience-color-end: oklch(0.13 0.025 240 / 0.6);
+    --emotional-ambience-glow: oklch(0.55 0.08 240 / 0.15);
+
+    // Marker token — controls emoji marker ring
+    --emotional-marker-ring: oklch(0.55 0.08 240);
+    --emotional-marker-glow: oklch(0.55 0.08 240 / 0.4);
+
+    // Popup tokens
+    --emotional-popup-bg: oklch(0.18 0.022 240 / 0.96);
+    --emotional-popup-border: oklch(0.55 0.08 240 / 0.5);
+    --emotional-popup-shadow: 0 8px 32px oklch(0 0 0 / 0.6);
+  }
+}
+
+// ================================================
+// ANGER — 😡 Protestas, huelgas, violencia
+// Deep crimson / blood red — high energy, danger
+// ================================================
+@mixin theme-emotional-map-anger {
+  body[data-emotion-theme="anger"] {
+    // Semantic color overrides
+    --semantic-color-primary: oklch(0.58 0.22 20);
+    --semantic-color-secondary: oklch(0.44 0.18 22);
+    --semantic-color-accent-primary: oklch(0.65 0.25 18);
+    --semantic-color-state-hover-primary: oklch(0.7 0.22 18);
+    --semantic-focus-ring-color: oklch(0.65 0.25 18);
+    --semantic-color-border-focus: oklch(0.65 0.25 18);
+
+    // Background — almost black with crimson undertone
+    --semantic-color-bg-primary: oklch(0.1 0.04 18);
+    --semantic-color-bg-secondary: oklch(0.16 0.06 18);
+    --semantic-color-bg-tertiary: oklch(0.2 0.07 18);
+
+    // Text — warm white
+    --semantic-color-text-primary: oklch(0.96 0.008 40);
+    --semantic-color-text-secondary: oklch(0.74 0.015 25);
+    --semantic-color-text-tertiary: oklch(0.58 0.012 25);
+
+    // Links
+    --semantic-color-link-default: oklch(0.7 0.2 20);
+    --semantic-color-link-hover: oklch(0.8 0.18 20);
+
+    // Borders
+    --semantic-color-border-subtle: oklch(0.22 0.06 20);
+    --semantic-color-border-default: oklch(0.3 0.1 20);
+    --semantic-color-border-strong: oklch(0.42 0.15 20);
+
+    // Emotional ambience
+    --emotional-ambience-color-start: oklch(0.1 0.04 18 / 0);
+    --emotional-ambience-color-end: oklch(0.58 0.22 20 / 0.25);
+    --emotional-ambience-glow: oklch(0.7 0.25 15 / 0.3);
+
+    // Marker + popup
+    --emotional-marker-ring: oklch(0.65 0.25 18);
+    --emotional-marker-glow: oklch(0.65 0.25 18 / 0.5);
+    --emotional-popup-bg: oklch(0.14 0.06 18 / 0.96);
+    --emotional-popup-border: oklch(0.58 0.22 20 / 0.6);
+    --emotional-popup-shadow: 0 8px 40px oklch(0.58 0.22 20 / 0.4);
+  }
+}
+
+// ================================================
+// SADNESS — 😢 Fallecimientos, accidentes, duelo
+// Muted indigo / slate blue — low energy, heavy
+// ================================================
+@mixin theme-emotional-map-sadness {
+  body[data-emotion-theme="sadness"] {
+    --semantic-color-primary: oklch(0.52 0.14 255);
+    --semantic-color-secondary: oklch(0.42 0.11 258);
+    --semantic-color-accent-primary: oklch(0.6 0.16 252);
+    --semantic-color-state-hover-primary: oklch(0.65 0.14 250);
+    --semantic-focus-ring-color: oklch(0.6 0.16 252);
+    --semantic-color-border-focus: oklch(0.6 0.16 252);
+
+    --semantic-color-bg-primary: oklch(0.1 0.03 255);
+    --semantic-color-bg-secondary: oklch(0.15 0.04 255);
+    --semantic-color-bg-tertiary: oklch(0.19 0.05 255);
+
+    --semantic-color-text-primary: oklch(0.93 0.008 250);
+    --semantic-color-text-secondary: oklch(0.7 0.012 255);
+    --semantic-color-text-tertiary: oklch(0.55 0.01 255);
+
+    --semantic-color-link-default: oklch(0.68 0.15 252);
+    --semantic-color-link-hover: oklch(0.78 0.13 252);
+
+    --semantic-color-border-subtle: oklch(0.2 0.04 255);
+    --semantic-color-border-default: oklch(0.28 0.08 255);
+    --semantic-color-border-strong: oklch(0.38 0.12 255);
+
+    --emotional-ambience-color-start: oklch(0.1 0.03 255 / 0);
+    --emotional-ambience-color-end: oklch(0.52 0.14 255 / 0.2);
+    --emotional-ambience-glow: oklch(0.55 0.18 252 / 0.22);
+
+    --emotional-marker-ring: oklch(0.6 0.16 252);
+    --emotional-marker-glow: oklch(0.6 0.16 252 / 0.45);
+    --emotional-popup-bg: oklch(0.14 0.04 255 / 0.96);
+    --emotional-popup-border: oklch(0.52 0.14 255 / 0.55);
+    --emotional-popup-shadow: 0 8px 40px oklch(0.52 0.14 255 / 0.35);
+  }
+}
+
+// ================================================
+// FEAR — 😱 Alertas, terremotos, amenazas
+// Deep desaturated purple / near-black — dread, unease
+// ================================================
+@mixin theme-emotional-map-fear {
+  body[data-emotion-theme="fear"] {
+    --semantic-color-primary: oklch(0.48 0.16 295);
+    --semantic-color-secondary: oklch(0.38 0.12 298);
+    --semantic-color-accent-primary: oklch(0.56 0.18 290);
+    --semantic-color-state-hover-primary: oklch(0.62 0.16 288);
+    --semantic-focus-ring-color: oklch(0.56 0.18 290);
+    --semantic-color-border-focus: oklch(0.56 0.18 290);
+
+    --semantic-color-bg-primary: oklch(0.08 0.05 295);
+    --semantic-color-bg-secondary: oklch(0.13 0.07 295);
+    --semantic-color-bg-tertiary: oklch(0.17 0.08 295);
+
+    --semantic-color-text-primary: oklch(0.92 0.006 295);
+    --semantic-color-text-secondary: oklch(0.68 0.01 295);
+    --semantic-color-text-tertiary: oklch(0.52 0.008 295);
+
+    --semantic-color-link-default: oklch(0.65 0.17 290);
+    --semantic-color-link-hover: oklch(0.75 0.15 290);
+
+    --semantic-color-border-subtle: oklch(0.18 0.07 295);
+    --semantic-color-border-default: oklch(0.26 0.1 295);
+    --semantic-color-border-strong: oklch(0.36 0.14 295);
+
+    --emotional-ambience-color-start: oklch(0.08 0.05 295 / 0);
+    --emotional-ambience-color-end: oklch(0.4 0.18 295 / 0.28);
+    --emotional-ambience-glow: oklch(0.48 0.22 290 / 0.28);
+
+    --emotional-marker-ring: oklch(0.56 0.18 290);
+    --emotional-marker-glow: oklch(0.56 0.18 290 / 0.5);
+    --emotional-popup-bg: oklch(0.11 0.07 295 / 0.97);
+    --emotional-popup-border: oklch(0.48 0.16 295 / 0.6);
+    --emotional-popup-shadow: 0 8px 40px oklch(0.4 0.18 295 / 0.45);
+  }
+}
+
+// ================================================
+// JOY — 😀 Récords, celebraciones, éxitos
+// Vivid amber / golden yellow — warmth, radiance
+// ================================================
+@mixin theme-emotional-map-joy {
+  body[data-emotion-theme="joy"] {
+    --semantic-color-primary: oklch(0.75 0.18 85);
+    --semantic-color-secondary: oklch(0.65 0.15 88);
+    --semantic-color-accent-primary: oklch(0.82 0.2 82);
+    --semantic-color-state-hover-primary: oklch(0.85 0.18 82);
+    --semantic-focus-ring-color: oklch(0.82 0.2 82);
+    --semantic-color-border-focus: oklch(0.82 0.2 82);
+
+    // Backgrounds — warm dark amber, not pure black
+    --semantic-color-bg-primary: oklch(0.12 0.04 85);
+    --semantic-color-bg-secondary: oklch(0.18 0.05 82);
+    --semantic-color-bg-tertiary: oklch(0.22 0.06 80);
+
+    // Text — warm cream on dark
+    --semantic-color-text-primary: oklch(0.97 0.012 85);
+    --semantic-color-text-secondary: oklch(0.8 0.025 78);
+    --semantic-color-text-tertiary: oklch(0.65 0.018 82);
+
+    --semantic-color-link-default: oklch(0.8 0.18 84);
+    --semantic-color-link-hover: oklch(0.9 0.15 84);
+
+    --semantic-color-border-subtle: oklch(0.22 0.05 82);
+    --semantic-color-border-default: oklch(0.35 0.08 82);
+    --semantic-color-border-strong: oklch(0.52 0.14 82);
+
+    --emotional-ambience-color-start: oklch(0.12 0.04 85 / 0);
+    --emotional-ambience-color-end: oklch(0.75 0.18 85 / 0.18);
+    --emotional-ambience-glow: oklch(0.82 0.22 82 / 0.35);
+
+    --emotional-marker-ring: oklch(0.82 0.2 82);
+    --emotional-marker-glow: oklch(0.82 0.2 82 / 0.55);
+    --emotional-popup-bg: oklch(0.15 0.05 82 / 0.96);
+    --emotional-popup-border: oklch(0.75 0.18 85 / 0.55);
+    --emotional-popup-shadow: 0 8px 40px oklch(0.75 0.18 85 / 0.35);
+  }
+}
+
+// ================================================
+// SURPRISE — 😲 Histórico, inesperado, viral
+// Vivid cyan / electric teal — shock, electricity
+// ================================================
+@mixin theme-emotional-map-surprise {
+  body[data-emotion-theme="surprise"] {
+    --semantic-color-primary: oklch(0.72 0.16 196);
+    --semantic-color-secondary: oklch(0.6 0.13 198);
+    --semantic-color-accent-primary: oklch(0.8 0.18 194);
+    --semantic-color-state-hover-primary: oklch(0.85 0.16 192);
+    --semantic-focus-ring-color: oklch(0.8 0.18 194);
+    --semantic-color-border-focus: oklch(0.8 0.18 194);
+
+    --semantic-color-bg-primary: oklch(0.1 0.03 196);
+    --semantic-color-bg-secondary: oklch(0.15 0.04 196);
+    --semantic-color-bg-tertiary: oklch(0.19 0.05 196);
+
+    --semantic-color-text-primary: oklch(0.96 0.008 196);
+    --semantic-color-text-secondary: oklch(0.75 0.015 196);
+    --semantic-color-text-tertiary: oklch(0.6 0.012 196);
+
+    --semantic-color-link-default: oklch(0.78 0.16 194);
+    --semantic-color-link-hover: oklch(0.88 0.14 194);
+
+    --semantic-color-border-subtle: oklch(0.2 0.04 196);
+    --semantic-color-border-default: oklch(0.3 0.08 196);
+    --semantic-color-border-strong: oklch(0.42 0.12 196);
+
+    --emotional-ambience-color-start: oklch(0.1 0.03 196 / 0);
+    --emotional-ambience-color-end: oklch(0.72 0.16 196 / 0.2);
+    --emotional-ambience-glow: oklch(0.8 0.2 194 / 0.32);
+
+    --emotional-marker-ring: oklch(0.8 0.18 194);
+    --emotional-marker-glow: oklch(0.8 0.18 194 / 0.5);
+    --emotional-popup-bg: oklch(0.13 0.04 196 / 0.96);
+    --emotional-popup-border: oklch(0.72 0.16 196 / 0.55);
+    --emotional-popup-shadow: 0 8px 40px oklch(0.72 0.16 196 / 0.38);
+  }
+}
+
+// ================================================
+// DISGUST — 🤢 Escándalos, corrupción, fraude
+// Acid green / sickly olive — aversion, rot
+// ================================================
+@mixin theme-emotional-map-disgust {
+  body[data-emotion-theme="disgust"] {
+    --semantic-color-primary: oklch(0.62 0.18 130);
+    --semantic-color-secondary: oklch(0.5 0.14 132);
+    --semantic-color-accent-primary: oklch(0.7 0.2 128);
+    --semantic-color-state-hover-primary: oklch(0.75 0.18 126);
+    --semantic-focus-ring-color: oklch(0.7 0.2 128);
+    --semantic-color-border-focus: oklch(0.7 0.2 128);
+
+    --semantic-color-bg-primary: oklch(0.1 0.04 130);
+    --semantic-color-bg-secondary: oklch(0.15 0.06 130);
+    --semantic-color-bg-tertiary: oklch(0.19 0.07 130);
+
+    --semantic-color-text-primary: oklch(0.95 0.01 130);
+    --semantic-color-text-secondary: oklch(0.72 0.018 130);
+    --semantic-color-text-tertiary: oklch(0.57 0.014 130);
+
+    --semantic-color-link-default: oklch(0.72 0.18 128);
+    --semantic-color-link-hover: oklch(0.82 0.16 128);
+
+    --semantic-color-border-subtle: oklch(0.2 0.05 130);
+    --semantic-color-border-default: oklch(0.28 0.09 130);
+    --semantic-color-border-strong: oklch(0.4 0.14 130);
+
+    --emotional-ambience-color-start: oklch(0.1 0.04 130 / 0);
+    --emotional-ambience-color-end: oklch(0.55 0.18 130 / 0.22);
+    --emotional-ambience-glow: oklch(0.65 0.22 128 / 0.3);
+
+    --emotional-marker-ring: oklch(0.7 0.2 128);
+    --emotional-marker-glow: oklch(0.7 0.2 128 / 0.5);
+    --emotional-popup-bg: oklch(0.13 0.05 130 / 0.96);
+    --emotional-popup-border: oklch(0.62 0.18 130 / 0.55);
+    --emotional-popup-shadow: 0 8px 40px oklch(0.55 0.18 130 / 0.38);
+  }
+}

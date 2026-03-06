@@ -1,0 +1,101 @@
+// ================================================
+// EMOTIONAL MAP THEME — SETUP
+// ================================================
+// Entry point for the Emotional Spain Map project.
+// Follows the SYX setup.scss canonical pattern (mirrors example-01/setup.scss).
+// ================================================
+
+// CORE
+// ================================================
+@use '../../abstracts/index' as *;
+@use '../../base/index' as *;
+@use '../../layout/grids/grid' as *;
+@use '../../atoms/index' as *;
+@use '../../molecules/index' as *;
+@use '../../organisms/index' as *;
+@use '../_base/universal' as *;
+@use 'theme' as *;
+// ================================================
+
+// :ROOT — Tokens
+// ================================================
+@include universal-values();
+@include theme-emotional-map-base();
+// ================================================
+
+// FONTS — Inter (primary map UI font)
+// ================================================
+@include font-family("Google-Inter--regular",
+  "#{$fonts-path}/google-inter/Inter-Regular",
+  400, normal, eot woff2 woff ttf svg);
+
+@include font-family("Google-Inter--medium",
+  "#{$fonts-path}/google-inter/Inter-Medium",
+  500, normal, eot woff2 woff ttf svg);
+// ================================================
+
+// RESET + BASE ELEMENTS
+// ================================================
+@include resets-global(emotional-map);
+@include elements-base(emotional-map);
+// ================================================
+
+// HELPERS — theme-independent first, then theme-specific
+// ================================================
+@include helper-icons();
+@include helper-fonts(emotional-map);
+@include helper-font-sizes(emotional-map);
+@include helper-dimensions(emotional-map);
+@include helper-spacer(emotional-map);
+@include helper-backgrounds(emotional-map);
+// ================================================
+
+// LAYOUT: grid
+// ================================================
+@include layout-grid(emotional-map);
+// ================================================
+
+// SYX ATOMS — production essentials
+// ================================================
+@include atom-breadcrumb(emotional-map);
+@include atom-btn(emotional-map);
+@include atom-check(emotional-map);
+@include atom-form(emotional-map);
+@include atom-icon(emotional-map);
+@include atom-icon-lucide(emotional-map);
+@include atom-label(emotional-map);
+@include atom-link(emotional-map);
+@include atom-list(emotional-map);
+@include atom-pagination(emotional-map);
+@include atom-pill(emotional-map);
+@include atom-radio(emotional-map);
+@include atom-switch(emotional-map);
+@include atom-table(emotional-map);
+@include atom-title(emotional-map);
+@include atom-txt(emotional-map);
+// ================================================
+
+// SYX MOLECULES
+// ================================================
+@include mol-form-field(emotional-map);
+@include mol-btn-group(emotional-map);
+@include mol-label-group(emotional-map);
+@include mol-form-field-set(emotional-map);
+// ================================================
+
+// SYX ORGANISMS
+// ================================================
+@include org-site-header(emotional-map);
+// ================================================
+
+// EMOTION THEME OVERRIDES
+// Activated via body[data-emotion-theme="..."]
+// Components cascade token changes automatically
+// ================================================
+@include theme-emotional-map-anger();
+@include theme-emotional-map-sadness();
+@include theme-emotional-map-fear();
+@include theme-emotional-map-joy();
+@include theme-emotional-map-surprise();
+@include theme-emotional-map-disgust();
+// ================================================

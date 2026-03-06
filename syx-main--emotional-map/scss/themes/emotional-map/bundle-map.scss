@@ -1,0 +1,50 @@
+// SYX — EMOTIONAL MAP | BUNDLE: map
+// ================================================
+// Single-entry CSS bundle for the Emotional Spain Map project.
+// Includes full SYX token system + 6 emotion theme overrides.
+// ================================================
+
+// CORE SYX
+@use '../../abstracts/index' as *;
+@use '../../base/index' as *;
+@use '../../layout/grids/grid' as *;
+@use '../../atoms/index' as *;
+@use '../../molecules/index' as *;
+@use '../../organisms/index' as *;
+@use '../_base/universal' as *;
+@use '../_shared/core' as *;
+@use 'theme' as *;
+
+// FONTS — Inter (used as primary map UI font)
+// ================================================
+@include font-family("Google-Inter--regular",
+  "#{$fonts-path}/google-inter/Inter-Regular",
+  400, normal, eot woff2 woff ttf svg);
+
+@include font-family("Google-Inter--medium",
+  "#{$fonts-path}/google-inter/Inter-Medium",
+  500, normal, eot woff2 woff ttf svg);
+
+// BASE THEME TOKENS — Neutral dark cartographic palette
+// ================================================
+@include universal-values();
+@include theme-emotional-map-base();
+
+// CORE (reset + helpers + grid)
+// ================================================
+@include syx-core(emotional-map);
+
+// CORE BUNDLE — production atoms, molecules, site-header organism
+// ================================================
+@include syx-bundle-core(emotional-map);
+
+// EMOTION THEME OVERRIDES
+// Applied via body[data-emotion-theme="..."]
+// Components react automatically through semantic token cascade
+// ================================================
+@include theme-emotional-map-anger();
+@include theme-emotional-map-sadness();
+@include theme-emotional-map-fear();
+@include theme-emotional-map-joy();
+@include theme-emotional-map-surprise();
+@include theme-emotional-map-disgust();
